@@ -4,8 +4,7 @@
 ####  README.md
 
 
-if you want to go to test.md
-click https://github.com/redrumq/krowemoh/blob/8746e6868f5fc2aa0dc01d5bdb854f7418dd3366/test.md
+https://github.com/lk80231314/lk/blob/7fbf523e7d71f6fc4202678675fae065b0a5e1b0/lk1
 
 ---
 
