@@ -19,7 +19,7 @@ click https://github.com/redrumq/krowemoh/blob/8746e6868f5fc2aa0dc01d5bdb854f741
 ---
 
 
-github文件夹下的一张图片:
+文件夹下的图片:
 
 ![avatar](https://github.com/lk80231314/lk/blob/1bfa19c5a8d213115a4f58f288196526710ddb09/QQ%E5%9B%BE%E7%89%8720210429195111.jpg)
 
@@ -99,32 +99,34 @@ a table:
 ---
 
 ```java
-private void requestPermission() {
-        if (Build.VERSION.SDK_INT >= 23 && !isPermissionRequested) {
-            isPermissionRequested = true;
-            ArrayList<String> permissionsList = new ArrayList<>();
-            String[] permissions = {
-                    Manifest.permission.ACCESS_NETWORK_STATE,
-                    Manifest.permission.INTERNET,
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                    Manifest.permission.READ_EXTERNAL_STORAGE,
-                    Manifest.permission.ACCESS_COARSE_LOCATION,
-                    Manifest.permission.ACCESS_FINE_LOCATION,
-                    Manifest.permission.ACCESS_WIFI_STATE,
-            };
-
-            for (String perm : permissions) {
-                if (PackageManager.PERMISSION_GRANTED != checkSelfPermission(perm)) {
-                    permissionsList.add(perm);
-                    // 进入到这里代表没有权限.
-                }
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        TextView text = (TextView) findViewById(R.id.text_Info);
+        text.setTextColor(Color.GREEN);
+        text.setText("欢迎使用百度地图Android SDK v" + VersionInfo.getApiVersion());
+        setTitle(getTitle() + " v" + VersionInfo.getApiVersion());
+        ListView mListView = (ListView) findViewById(R.id.listView);
+        // 添加ListItem，设置事件响应
+        mListView.setAdapter(new DemoListAdapter());
+        mListView.setOnItemClickListener(new OnItemClickListener() {
+            public void onItemClick(AdapterView<?> arg0, View v, int index, long arg3) {
+                onListItemClick(index);
             }
+        });
 
-            if (!permissionsList.isEmpty()) {
-                String[] strings = new String[permissionsList.size()];
-                requestPermissions(permissionsList.toArray(strings), 0);
-            }
-        }
+        // 申请动态权限
+        requestPermission();
+
+        // 注册 SDK 广播监听者
+        IntentFilter iFilter = new IntentFilter();
+        iFilter.addAction(SDKInitializer.SDK_BROADTCAST_ACTION_STRING_PERMISSION_CHECK_OK);
+        iFilter.addAction(SDKInitializer.SDK_BROADTCAST_ACTION_STRING_PERMISSION_CHECK_ERROR);
+        iFilter.addAction(SDKInitializer.SDK_BROADCAST_ACTION_STRING_NETWORK_ERROR);
+        mReceiver = new SDKReceiver();
+        registerReceiver(mReceiver, iFilter);
     }
+
     
     ```
