@@ -12,7 +12,7 @@ click https://github.com/redrumq/krowemoh/blob/8746e6868f5fc2aa0dc01d5bdb854f741
 
 网络图片：
 
-![网络图片](http://i0.hdslb.com/bfs/article/125d882c379c965539fb528f31bdfc8c24713a82.jpg)
+![网络图片](https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20161203%2F29ec1d0a132b45f3a8dd3bb89a50a5c4_th.jpg&refer=http%3A%2F%2Fimg.mp.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1622289203&t=72925ef71d31a5717f4bba731a901d72)
 
 
 
@@ -21,7 +21,7 @@ click https://github.com/redrumq/krowemoh/blob/8746e6868f5fc2aa0dc01d5bdb854f741
 
 github文件夹下的一张图片:
 
-![avatar](https://github.com/redrumq/krowemoh/blob/28e21ffb9dccee9695ac458110211afc440642c8/ddd.png)
+![avatar](https://github.com/lk80231314/lk/blob/1bfa19c5a8d213115a4f58f288196526710ddb09/QQ%E5%9B%BE%E7%89%8720210429195111.jpg)
 
 
 ---
